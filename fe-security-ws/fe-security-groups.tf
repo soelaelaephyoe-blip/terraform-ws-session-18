@@ -107,48 +107,48 @@ resource "aws_vpc_security_group_ingress_rule" "fe_private_sg02_allow_icmp_from_
 }
 
 # Ingress: Allow SSH from backend
-resource "aws_vpc_security_group_ingress_rule" "fe_private_sg02_allow_ssh_from_be_private_sg02" {
-  security_group_id = aws_security_group.fe_private_sg02.id
+# resource "aws_vpc_security_group_ingress_rule" "fe_private_sg02_allow_ssh_from_be_private_sg02" {
+#   security_group_id = aws_security_group.fe_private_sg02.id
 
-  referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg02_id"]
+#   referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg02_id"]
 
-  from_port   = 22
-  ip_protocol = "tcp"
-  to_port     = 22
-}
+#   from_port   = 22
+#   ip_protocol = "tcp"
+#   to_port     = 22
+# }
 
-# Ingress: Allow ICMP Ping from backend
-resource "aws_vpc_security_group_ingress_rule" "fe_private_sg02_allow_icmp_from_be_private_sg02" {
-  security_group_id = aws_security_group.fe_private_sg02.id
+# # Ingress: Allow ICMP Ping from backend
+# resource "aws_vpc_security_group_ingress_rule" "fe_private_sg02_allow_icmp_from_be_private_sg02" {
+#   security_group_id = aws_security_group.fe_private_sg02.id
 
-  referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg02_id"]
+#   referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg02_id"]
 
-  from_port   = 8
-  ip_protocol = "icmp"
-  to_port     = 0
-}
+#   from_port   = 8
+#   ip_protocol = "icmp"
+#   to_port     = 0
+# }
 
-# Egress: Allow SSH to backend
-resource "aws_vpc_security_group_egress_rule" "fe_private_sg02_allow_ssh_to_be_private_sg02" {
-  security_group_id = aws_security_group.fe_private_sg02.id
+# # Egress: Allow SSH to backend
+# resource "aws_vpc_security_group_egress_rule" "fe_private_sg02_allow_ssh_to_be_private_sg02" {
+#   security_group_id = aws_security_group.fe_private_sg02.id
 
-  referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg02_id"]
+#   referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg02_id"]
 
-  from_port   = 22
-  ip_protocol = "tcp"
-  to_port     = 22
-}
+#   from_port   = 22
+#   ip_protocol = "tcp"
+#   to_port     = 22
+# }
 
-# Egress: Allow ICMP Ping to backend
-resource "aws_vpc_security_group_egress_rule" "fe_private_sg02_allow_icmp_to_be_private_sg02" {
-  security_group_id = aws_security_group.fe_private_sg02.id
+# # Egress: Allow ICMP Ping to backend
+# resource "aws_vpc_security_group_egress_rule" "fe_private_sg02_allow_icmp_to_be_private_sg02" {
+#   security_group_id = aws_security_group.fe_private_sg02.id
 
-  referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg02_id"]
+#   referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg02_id"]
 
-  from_port   = 8
-  ip_protocol = "icmp"
-  to_port     = 0
-}
+#   from_port   = 8
+#   ip_protocol = "icmp"
+#   to_port     = 0
+# }
 #############################################################
 resource "aws_security_group" "fe_private_sg03" {
   name = "${var.frontend_prefix}-private-security-group03"
@@ -177,45 +177,45 @@ resource "aws_vpc_security_group_ingress_rule" "fe_private_sg03_allow_icmp_from_
 }
 
 # Ingress: Allow SSH from backend SG03
-resource "aws_vpc_security_group_ingress_rule" "fe_private_sg03_allow_ssh_from_be_private_sg03" {
-  security_group_id = aws_security_group.fe_private_sg03.id
+# resource "aws_vpc_security_group_ingress_rule" "fe_private_sg03_allow_ssh_from_be_private_sg03" {
+#   security_group_id = aws_security_group.fe_private_sg03.id
 
-  referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg03_id"]
+#   referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg03_id"]
 
-  from_port   = 22
-  ip_protocol = "tcp"
-  to_port     = 22
-}
+#   from_port   = 22
+#   ip_protocol = "tcp"
+#   to_port     = 22
+# }
 
-# Ingress: Allow ICMP Ping from backend SG03
-resource "aws_vpc_security_group_ingress_rule" "fe_private_sg03_allow_icmp_from_be_private_sg03" {
-  security_group_id = aws_security_group.fe_private_sg03.id
+# # Ingress: Allow ICMP Ping from backend SG03
+# resource "aws_vpc_security_group_ingress_rule" "fe_private_sg03_allow_icmp_from_be_private_sg03" {
+#   security_group_id = aws_security_group.fe_private_sg03.id
 
-  referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg03_id"]
+#   referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg03_id"]
 
-  from_port   = 8
-  ip_protocol = "icmp"
-  to_port     = 0
-}
+#   from_port   = 8
+#   ip_protocol = "icmp"
+#   to_port     = 0
+# }
 
-# Egress: Allow SSH to backend SG03
-resource "aws_vpc_security_group_egress_rule" "fe_private_sg03_allow_ssh_to_be_private_sg03" {
-  security_group_id = aws_security_group.fe_private_sg03.id
+# # Egress: Allow SSH to backend SG03
+# resource "aws_vpc_security_group_egress_rule" "fe_private_sg03_allow_ssh_to_be_private_sg03" {
+#   security_group_id = aws_security_group.fe_private_sg03.id
 
-  referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg03_id"]
+#   referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg03_id"]
 
-  from_port   = 22
-  ip_protocol = "tcp"
-  to_port     = 22
-}
+#   from_port   = 22
+#   ip_protocol = "tcp"
+#   to_port     = 22
+# }
 
-# Egress: Allow ICMP Ping to backend SG03
-resource "aws_vpc_security_group_egress_rule" "fe_private_sg03_allow_icmp_to_be_private_sg03" {
-  security_group_id = aws_security_group.fe_private_sg03.id
+# # Egress: Allow ICMP Ping to backend SG03
+# resource "aws_vpc_security_group_egress_rule" "fe_private_sg03_allow_icmp_to_be_private_sg03" {
+#   security_group_id = aws_security_group.fe_private_sg03.id
 
-  referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg03_id"]
+#   referenced_security_group_id = data.tfe_outputs.be_security.nonsensitive_values["be_private_sg03_id"]
 
-  from_port   = 8
-  ip_protocol = "icmp"
-  to_port     = 0
-}
+#   from_port   = 8
+#   ip_protocol = "icmp"
+#   to_port     = 0
+# }
