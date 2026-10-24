@@ -82,7 +82,3 @@ output "backend_private_route_table03_arn" {
   description = "ARN of backend private route table 03"
   value       = aws_route_table.backend_private_rtb03.arn
 }
-output "backend_private_route_table03_name" {
-  description = "Name of backend private route table 03"
-  value       = aws_route_table.backend_private_rtb03.name
-}
