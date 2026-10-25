@@ -79,9 +79,9 @@ output "frontend_private_route_table03_id" {
   description = "ID of frontend private route table 03"
   value       = aws_route_table.frontend_private_rtb03.id
 }
-output "frontend_private_route_table03_arn" {
-  description = "ARN of frontend private route table 03"
-  value       = aws_route_table.frontend_private_rtb03.arn
-}
+# output "frontend_private_route_table03_arn" {
+#   description = "ARN of frontend private route table 03"
+#   value       = aws_route_table.frontend_private_rtb03.arn
+# }
 
 
